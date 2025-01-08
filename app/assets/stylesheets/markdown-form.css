@@ -1,0 +1,32 @@
+.markdown-form {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title-text-input {
+  width: 100%;
+  height: 50px;
+  border: none;
+  font-size: 2em;
+}
+
+.title-text-input:focus {
+  outline: none;
+}
+
+.body-text-input {
+  width: 100%;
+  height: 100vh;
+  border: none;
+  font-size: 1.5em;
+  padding: 1em;
+}
+
+.body-text-input:focus {
+  outline: none;
+}
+
+hr {
+  border: 1px solid #ddd;
+}
