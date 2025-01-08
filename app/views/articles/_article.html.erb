@@ -1,0 +1,11 @@
+<li id="<%= dom_id article %>" class="post">
+  <%= link_to blog_article_path(article.slug) do %>
+  <date>
+    <%= article.publish_date.strftime("%d.%m.%Y") %>
+  </date>
+
+  <span>
+    <%= article.title %>
+  </span>
+  <% end %>
+</li>

@@ -1,0 +1,32 @@
+<% @nav_links = [
+  { name: "Home", path: root_path },
+  { name: "Blog", path: blog_path },
+]%>
+
+<% @admin_nav_links = [
+  { name: "Articles", path: admin_articles_path },
+]%>
+
+
+<header>
+  <%= link_to "CazorLabs", '/' , class: "site-title"%>
+  <nav>
+    <ul class="nav-list">
+      <% (controller.controller_path.include?("admin/") ? @admin_nav_links : @nav_links ).each do |link| %>
+      <li>
+        <%= link_to_unless_current(link[:name], link[:path]) do %>
+        <span class="current">
+          <span class="visuallyhidden">Current Page: </span>
+          <%= link[:name] %>
+        </span>
+        <%end%>
+      </li>
+      <% end %>
+
+      <li>
+        <a class="nav-item" href="https://www.youtube.com/@alex27cc">Youtube</a>
+      </li>
+    </ul>
+  </nav>
+  </div>
+</header>

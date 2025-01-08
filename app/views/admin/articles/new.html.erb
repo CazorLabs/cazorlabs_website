@@ -1,0 +1,21 @@
+<% content_for :head do %>
+<%= stylesheet_link_tag "markdown-form" %>
+<% end %>
+
+
+<%= form_with model: @article, local: true, url: admin_articles_path, class: "markdown-form" do |form| %>
+<div class="title-field">
+  <%= form.text_field :title, placeholder:"Article title" , class: "title-text-input" %>
+  <hr>
+</div>
+
+<div class="field">
+  <%= form.text_area :content, class: "body-text-input" %>
+</div>
+<div class="field">
+  <%= form.date_select :publish_date, class: "body-text-input" %>
+</div>
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>

@@ -1,0 +1,17 @@
+<% content_for :head do %>
+<title>Blog</title>
+<%= stylesheet_link_tag "post" %>
+<% end %>
+
+<div class="post">
+  <p id="notice"><%= notice %></p>
+
+  <h2><%= @article.title %></h2>
+  <hr />
+
+  <div>
+    <%= @article.markdown.html_safe %>
+  </div>
+
+  <%= link_to 'Back', admin_articles_path %>
+</div>
