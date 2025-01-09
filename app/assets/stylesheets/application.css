@@ -225,3 +225,8 @@ figure figcaption {
 .pagy a+a {
   margin-left: 0.5em;
 }
+
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
