@@ -3,11 +3,11 @@
 <%= stylesheet_link_tag "admin/articles" %>
 <% end %>
 
-<div>
+<div class="admin-articles">
   <p style="color: green"><%= notice %></p>
 
   <div class="top-actions">
-    <h1>Articles</h1>
+    <span>Articles</span>
     <%= link_to "New Article", new_admin_article_path, class: "publish-button"%>
   </div>
 
