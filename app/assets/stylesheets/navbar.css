@@ -4,32 +4,10 @@ header {
 }
 
 header nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.site-title {
-  font-size: 1.5em;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.nav-div {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-
-  margin: 0 auto;
-}
-
-header nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   font-size: 0.875em;
   line-height: 1.25em;
   font-weight: 600;
+  margin: auto 0;
 }
 
 header a {
@@ -72,9 +50,17 @@ span.current::after {
 
 nav ul {
   display: flex;
+  margin: 0;
 }
 
 nav li {
   list-style: none;
   margin-left: 1em;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
 }
