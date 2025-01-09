@@ -9,7 +9,7 @@
 
 
 <header>
-  <%= link_to "CazorLabs", '/' , class: "site-title"%>
+  <%= link_to application_title, root_path, class: "logo" %>
   <nav>
     <ul class="nav-list">
       <% (controller.controller_path.include?("admin/") ? @admin_nav_links : @nav_links ).each do |link| %>
@@ -26,6 +26,12 @@
       <li>
         <a class="nav-item" href="https://www.youtube.com/@alex27cc">Youtube</a>
       </li>
+
+      <% if authenticated? %>
+      <li>
+        <%= link_to "Admin" , admin_articles_path, class: "nav-item" %>
+      </li>
+      <% end %>
     </ul>
   </nav>
   </div>
