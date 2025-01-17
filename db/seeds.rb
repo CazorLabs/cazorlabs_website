@@ -10,6 +10,6 @@
 puts "starting to seed the database"
 100.times do |iter|
   puts iter
-  Article.create(title: Faker::Books::Dune.quote, content: Faker::Movies::VForVendetta.speech, publish_date: Time.now, slug: Faker::Internet.slug(glue: "-"))
+  Article.create(title: Faker::Books::Dune.quote, content: Faker::Movies::VForVendetta.speech, publish_date: Faker::Date.between(from: 3.years.ago, to: Date.today), slug: Faker::Internet.slug(glue: "-"))
 end
 puts "finished seeding the database"
