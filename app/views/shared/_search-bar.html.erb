@@ -1,0 +1,5 @@
+<div class="search-form" data-controller="search">
+  <%= form_with url: blog_path, method: :get, data: { "search-target": "form", turbo_frame:"posts", turbo_action:"advance" } do |form| %>
+    <%= form.text_field :query, placeholder: "Search by keyword", class: "input", data: { action: "input->search#submit" } %>
+  <% end %>
+</div>
