@@ -1,12 +1,1 @@
-<%= turbo_stream.append "posts" do %>
-      <% @articles.each do |article| %>
-    <%cache article do %>
-    <%= render article%>
-    <% end %>
-    <% end %>
- <% end %>
-<% if @pagy.next.present? %>
-  <%= turbo_stream.replace "pagination" do %>
-    <%= turbo_frame_tag "pagination", src: blog_path(page: @pagy.next, format: :turbo_stream), loading: :lazy %>
-  <% end %>
-<% end %>
+
