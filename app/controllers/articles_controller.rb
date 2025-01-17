@@ -5,10 +5,15 @@ class ArticlesController < ApplicationController
   def index
     if params[:query].present?
       sql_query = "title LIKE :query OR content LIKE :query"
-      @records =Article.where(sql_query, query: "%#{params[:query]}%")
+      @records = Article.published.where(sql_query, query: "%#{params[:query]}%")
       @pagy, @articles = pagy(@records, limit: 10)
     else
       @pagy, @articles = pagy(Article.published, limit: 10)
+    end
+
+    respond_to do |format|
+      format.turbo_stream
+      format.html
     end
   end
 
