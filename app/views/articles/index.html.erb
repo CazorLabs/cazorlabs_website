@@ -1,35 +1,24 @@
 <% content_for :head do %>
-<title>Blog</title>
-<%= stylesheet_link_tag "post" %>
+  <title>Blog</title>
+  <%= stylesheet_link_tag "post" %>
 <% end %>
-
 
 <div>
   <p style="color: green"><%= notice %></p>
 
-  <%= form_with url: blog_path, method: :get do |form| %>
-  <div>
-    <%= form.text_field :query %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-  <% end %>
-
   <h1>Blog</h1>
 
+  <%= turbo_frame_tag "posts" do %>
+    <ul class="posts">
+      <% @articles.each do |article| %>
+        <% cache article do %>
+          <%= render article %>
+        <% end %>
+      <% end %>
 
-  <ul class="posts">
-    <% @articles.each do |article| %>
-    <%cache article do %>
-    <%= render article%>
-    <% end %>
-    <% end %>
-  </ul>
-
+    </ul>
+  <% end %>
   <%# Render a view helper in your views (skipping nav links for empty pages) %>
   <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
-
 
 </div>
