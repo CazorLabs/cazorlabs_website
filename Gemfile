@@ -73,3 +73,7 @@ gem "hotwire-spark", "~> 0.1.12"
 gem "rails", "= 8.0.0"
 
 gem "erb-formatter", "~> 0.7.3"
+
+gem "marksmith", "~> 0.1.2"
+
+gem "css-zero", "~> 1.0"
