@@ -13,31 +13,24 @@ html {
   padding: 1.5em;
 }
 
+body {
+  background-color: white;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 125%;
     max-width: 1200px;
   }
-}
 
-h1,
-h2,
-h3,
-h4 {
-  margin: 2.5rem 0 1.5rem 0;
-  line-height: 1.25;
-  color: #333;
+  .post {
+    max-width: 800px;
+    margin: 0 auto;
+  }
 }
 
 a {
-  color: #fa6432;
   text-decoration: none;
-}
-
-a:hover,
-a:focus,
-a:active {
-  text-decoration: underline;
 }
 
 p {
@@ -80,62 +73,10 @@ dl dd {
   margin: -1em 0 1em 1em;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
-  padding: 0.5em;
-}
-
 blockquote {
   padding-left: 1em;
   font-style: italic;
   border-left: solid 1px #fa6432;
-}
-
-table {
-  font-size: 1rem;
-  text-align: left;
-  caption-side: bottom;
-  margin-bottom: 2em;
-}
-
-table * {
-  border: none;
-}
-
-table thead,
-table tr {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-}
-
-table tr:nth-child(even) {
-  background-color: rgba(200, 200, 200, 0.2);
-}
-
-table tbody {
-  display: block;
-  max-height: 70vh;
-  overflow-y: auto;
-}
-
-table td,
-table th {
-  padding: 0.25em;
-}
-
-table,
-.highlight > pre,
-pre.example {
-  max-height: 70vh;
-  margin: 1em 0;
-  padding: 1em;
-  overflow: auto;
-  font-size: 0.85rem;
-  font-family: monospace, monospace;
-  border: 1px dashed rgba(250, 100, 50, 0.5);
 }
 
 .title {
@@ -245,6 +186,7 @@ form .input {
   border-radius: 20px;
   border: 2px solid #ccc;
   text-align: right;
+  font-size: 16px;
 }
 
 .input:focus {
@@ -257,4 +199,127 @@ svg {
   height: 2em;
   vertical-align: middle;
   color: black;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+}
+
+.prose {
+  font-size: var(--text-fluid-base);
+  max-inline-size: 65ch;
+  /* Antialiased fonts */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  :is(h1, h2, h3, h4, h5, h6) {
+    font-weight: var(--font-extrabold);
+    hyphens: auto;
+    letter-spacing: -0.02ch;
+    line-height: 1.1;
+    margin-block: 0.5em;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+  }
+  h1 {
+    font-size: 2.4em;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  h4 {
+    font-size: 1.2em;
+  }
+  h5 {
+    font-size: 1em;
+  }
+  h6 {
+    font-size: 0.8em;
+  }
+  :is(ul, ol, menu) {
+    list-style: revert;
+    padding-inline-start: revert;
+  }
+  :is(p, ul, ol, dl, blockquote, pre, figure, table, hr) {
+    margin-block: 0.65lh;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+  }
+  hr {
+    border-color: var(--color-border-dark);
+    border-style: var(--border-style, solid) none none;
+    margin: 2lh auto;
+  }
+  :is(b, strong) {
+    font-weight: var(--font-bold);
+  }
+  :is(pre, code) {
+    background-color: var(--color-border-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-sm);
+    font-family: var(--font-monospace-code);
+    font-size: 0.85em;
+  }
+  code {
+    padding: 0.1em 0.3em;
+  }
+  pre {
+    border-radius: 0.5em;
+    overflow-x: auto;
+    padding: 0.5lh 2ch;
+    text-wrap: nowrap;
+  }
+  pre code {
+    background-color: transparent;
+    border: 0;
+    font-size: 1em;
+    padding: 0;
+  }
+  p {
+    hyphens: auto;
+    letter-spacing: -0.005ch;
+  }
+  blockquote {
+    font-style: italic;
+    margin: 0 3ch;
+  }
+  blockquote p {
+    hyphens: none;
+  }
+  table {
+    border: 1px solid var(--color-border-dark);
+    border-collapse: collapse;
+    margin: 1lh 0;
+  }
+  th {
+    font-weight: var(--font-bold);
+  }
+  :is(th, td) {
+    border: 1px solid var(--color-border-dark);
+    padding: 0.2lh 1ch;
+    text-align: start;
+  }
+  th {
+    border-block-end-width: 3px;
+  }
+  del {
+    background-color: rgb(from var(--color-negative) r g b / 0.1);
+    color: var(--color-negative);
+  }
+  ins {
+    background-color: rgb(from var(--color-positive) r g b / 0.1);
+    color: var(--color-positive);
+  }
+  a {
+    color: var(--color-link);
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+  }
+  mark {
+    color: var(--color-text);
+    background-color: var(--color-highlight);
+  }
 }

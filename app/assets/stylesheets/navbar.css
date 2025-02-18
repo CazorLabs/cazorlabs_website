@@ -1,16 +1,5 @@
 header {
   background: white;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-content {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
 }
 
 header nav {
@@ -47,15 +36,17 @@ nav ul {
   display: flex;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 nav li {
   list-style: none;
   margin-left: 1em;
 }
-
+nav li a {
+  margin: 0 auto;
+}
 .logo {
-  font-size: 1.5em;
   font-weight: bold;
   text-decoration: none;
   color: #000;
@@ -108,6 +99,8 @@ nav li {
     top: 100%;
     left: 0;
     padding: 1rem;
+    background: white;
+    height: 100vh;
   }
 
   .nav-menu.is-open {
