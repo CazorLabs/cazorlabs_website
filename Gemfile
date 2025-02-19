@@ -70,7 +70,7 @@ gem "pagy", "~> 9.3"
 
 gem "hotwire-spark", "~> 0.1.12"
 
-gem "rails", "= 8.0.0"
+gem "rails", "8.0.1"
 
 gem "erb-formatter", "~> 0.7.3"
 
