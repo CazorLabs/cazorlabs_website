@@ -6,9 +6,7 @@
 <div>
   <p style="color: green"><%= notice %></p>
 
-  <h1>Blog</h1>
-
-  <%= turbo_frame_tag "posts" do %>
+  <%= turbo_frame_tag "posts", target: "_top" do %>
     <ul class="posts">
       <% @articles.each do |article| %>
         <% cache article do %>
