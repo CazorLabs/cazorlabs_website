@@ -68,7 +68,7 @@ gem "coderay", "~> 1.1"
 
 gem "pagy", "~> 9.3"
 
-gem "hotwire-spark", "~> 0.1.12"
+gem "hotwire-spark", "~> 0.1.13"
 
 gem "rails", "= 8.0.0"
 
