@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <title><%= content_for(:title) || "Secretsapp" %></title>
+    <title><%= content_for(:title) || "Blog Scaffold" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="view-transition" content="same-origin">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,19 +18,22 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-
-    <%= stylesheet_link_tag "application" %>
-    <%= stylesheet_link_tag "navbar" %>
-
+    <%= stylesheet_link_tag "reset", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "variables", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "navbar", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "utilities", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "base", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="header-layout">
     <%= render "shared/navbar" %>
-    <main class="container">
-      <%= yield %>
+
+    <main id="main">
+      <div class="container">
+        <%= yield %>
+      </div>
     </main>
   </body>
-
 </html>
