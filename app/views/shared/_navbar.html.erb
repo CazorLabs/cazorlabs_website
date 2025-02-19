@@ -1,11 +1,11 @@
 <% @nav_links = [{ name: "Home", path: root_path }, { name: "Blog", path: blog_path }] %>
 <% @admin_nav_links = [{ name: "Articles", path: admin_articles_path }] %>
 
-<header data-controller="navbar">
-  <div class="header-content">
-    <%= link_to application_title, root_path, class: "logo" %>
+<header data-controller="navbar" class="flex relative justify-between items-center">
+  <div class="flex justify-between items-center w-full">
+    <%= link_to application_title, root_path, class: "font-semibold text-xl" %>
     <button class="mobile-menu-button" data-action="click->navbar#toggleMenu" aria-label="Toggle menu">
-      <%= render_icon "hamburger" %>
+      <%= render_icon "hamburger", classes: "w-12" %>
     </button>
   </div>
 
@@ -23,10 +23,10 @@
       <% end %>
 
       <li>
-        <a class="nav-item" href="https://www.youtube.com/@alex27cc">Youtube</a>
+        <%= render_icon "youtube", classes: "m-auto w-12" %>
       </li>
 
-      <% if authenticated? %>
+      <% if !authenticated? %>
         <li>
           <%= link_to "Admin", admin_articles_path, class: "nav-item" %>
         </li>
