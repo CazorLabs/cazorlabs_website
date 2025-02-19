@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+  validates :title, presence: true
+  validates :content, presence: true
   after_create :convert_markdown
   scope :published, -> { where("publish_date <= ?", Time.now) }
 
