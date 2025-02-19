@@ -208,7 +208,7 @@ svg {
 
 .prose {
   font-size: var(--text-fluid-base);
-  max-inline-size: 65ch;
+  max-inline-size: 75ch;
   /* Antialiased fonts */
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -251,7 +251,7 @@ svg {
   hr {
     border-color: var(--color-border-dark);
     border-style: var(--border-style, solid) none none;
-    margin: 2lh auto;
+    margin: 0.5lh auto;
   }
   :is(b, strong) {
     font-weight: var(--font-bold);
