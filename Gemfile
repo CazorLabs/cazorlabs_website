@@ -74,6 +74,6 @@ gem "rails", "= 8.0.0"
 
 gem "erb-formatter", "~> 0.7.3"
 
-gem "marksmith", "~> 0.1.2"
+gem "marksmith", "~> 0.2.1"
 
 gem "css-zero", "~> 1.0"
